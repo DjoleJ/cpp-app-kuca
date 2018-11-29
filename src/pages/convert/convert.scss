@@ -1,0 +1,335 @@
+page-convert {
+
+    
+
+    .toolbar-md-bg-dark .toolbar-background-md {
+        background: #403e43;
+    }
+
+    .clearfix::after {
+        content: '';
+        display: table;
+        clear: both;
+        
+    }
+
+    .clear {
+        clear:both;
+    }
+
+    .description {
+        font-size: .7em;
+    }
+
+    .index-price {
+        font-size: .9em;
+    }
+
+    .card-content-md {
+        padding: 0;
+        transition: ease 1s;
+    }
+
+    .fa-line-chart {
+        color: #fff;
+    }
+
+    .desc {
+        font-size: 18px;
+        text-align: center;
+        color: yellow;
+        padding-top: 20px;
+        margin-top: 0;
+    }
+
+    form {
+        background-color: #403e43;
+        height: 100%;
+    }
+
+    .form-uth-amount,
+    .form-your-address {
+        padding: 15px;
+        padding-bottom: 0;
+    }
+
+    .col-1,
+    .col-2 {
+        padding: 10px;
+    }
+
+    .form-uth-amount label {
+        display: block;
+        color: white;
+        font-size: 10px;
+        margin-bottom: 5px;
+
+    }
+    
+    .form-uth-amount input[type="text"] {
+        display: block;
+        background-color: #565658;
+        border-radius: 5px;
+        width: 100%;
+        height: 40px;
+        border: 1px solid #666666;
+        padding: 5px 30px;
+        color: white;
+        
+    }
+
+    .form-your-address label {
+        display: block;
+        color: white;
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+
+    .form-your-address input[type="text"] {
+        display: block;
+        background-color: #565658;
+        border-radius: 5px;
+        width: 100%;
+        height: 40px;
+        border: 1px solid #666666;
+        padding: 5px 30px;
+        color: white;
+    }
+
+    .col-1 label {
+        display: block;
+        color: white;
+        font-size: 10px;
+        margin-bottom: 5px;
+
+    }
+    
+    .col-1 input[type="text"] {
+        display: block;
+        background-color: #565658;
+        border-radius: 5px;
+        width: 80%;
+        height: 40px;
+        border: 1px solid #666666;
+        padding: 5px 30px;
+        color: white;
+        
+    }
+
+    
+
+    .col-2 label {
+        display: block;
+        color: white;
+        font-size: 10px;
+        margin-bottom: 5px;
+        text-align: right;
+
+    }
+    
+    .col-2 input[type="text"] {
+        display: block;
+        float: right;
+        background-color: #565658;
+        border-radius: 5px;
+        width: 80%;
+        height: 40px;
+        border: 1px solid #666666;
+        padding: 5px 30px;
+        color: white;
+        
+    }
+
+    .warning {
+        text-align: center;
+        text-transform: uppercase;
+        color: color($colors, danger);
+        font-size: 16px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .fa-exclamation-triangle {
+        color: red;
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    .btn-send {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        background-color: color($colors, secondary);
+        color: white;
+        text-transform: uppercase;
+        width: 60%;
+        height: 50px;
+        font-size: 18px;
+        font-weight: 100;
+    }
+
+    ion-footer img {
+        height: 35px;
+        width: 35px;
+        margin: 0 auto;
+    }
+
+    ion-list {
+        background-color: #3b3940 !important;
+    }
+
+    ion-item {
+        background-color: #3b3940 !important;
+        width: 100% !important;
+        margin: 0;
+    }
+
+    ion-toggle.toggle.toggle-md {
+        width: 1000px !important;
+        height: 30px !important;
+        padding: 0;
+        padding-top: 20px;
+    }
+
+    div.item-inner {
+        
+        padding: 0;
+    }
+
+    .input-wrapper {
+        display: none;
+    }
+    .item-md {
+        padding-left: 0;
+    }
+    .item-block {
+        
+        
+        
+    }
+
+    .toggle .toggle-md {
+        margin: 0 auto;
+    }
+
+    .toggle-item {
+        width: 100px !important;
+    }
+
+    .toggle-icon {
+        width: 65% !important;
+        margin: 0 auto !important;
+        background-color: #565658 !important;
+    }
+
+    .toggle-icon::after {
+        content: 'COLATERAL';
+        position: absolute;
+        top: 5px;
+        left: 57.5%;
+        color: #f53d3d;
+    }
+
+    .item-cover {
+        width: 300px;
+    }
+
+    .toggle-inner {
+        position: absolute !important;
+        top: 1px !important;
+        height: 28px !important;
+        width: 52% !important;
+        border-radius: 20px !important;
+        background-color: color($colors, secondary) !important;
+    }
+
+    .toggle-inner::after {
+        content: 'BURN';
+        position: absolute;
+        top: 3.5px;
+        left: 30%;
+        color: white;
+        
+    }
+
+    .toggle-md.toggle-checked .toggle-inner {
+        transform: translate3d(92%, 0, 0) !important;
+        background-color: color($colors, secondary) !important;
+    }
+
+    .toggle-md.toggle-checked .toggle-icon::after {
+        content: 'BURN';
+        left: 15%;
+    }
+
+    .toggle-md.toggle-checked .toggle-inner::after {
+        content: 'COLATERAL';
+        left: 15%;
+    }
+
+    .segment-activated {
+        border-top: 2px solid color($colors, red) !important;
+        border-bottom: none !important;
+        border-right-color: #565658 !important;
+    }
+
+    .seg-btn1 {
+        border-right: 1px solid #565658;
+    }
+    .seg-btn2 {
+        border-right: 1px solid #565658;
+    }
+
+    .seg-btn3 {
+        border-right: 1px solid #565658;
+    }
+
+    
+    
+
+}
+
+
+//alert styles
+.alert-md .alert-wrapper {
+    width: 90% !important;
+    height: 220px !important;
+}
+
+.alert-md .alert-head {
+    background-color: color($colors, danger) !important;
+}
+
+.alert-md .alert-message {
+    padding-top: 30px;
+    color: color($colors, danger);
+    text-align: center;
+}
+
+.alert-md .alert-button-group {
+    padding-top: 40px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.alert-md .alert-button {
+    width: 35%;
+    font-weight: bold;
+    margin: 0 auto;
+    border-radius: 20px;
+    color: white;
+}
+
+.alert-md .alert-button .button-inner {
+    justify-content: center !important;
+}
+
+.btn-yes {
+    background-color: #32db64 !important;
+
+}
+
+.btn-no {
+    background-color: #f53d3d !important;
+}
+

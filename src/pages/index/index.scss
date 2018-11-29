@@ -1,0 +1,73 @@
+page-index {
+
+    ion-icon {
+    color: color($colors, light);
+    }
+
+    .searchbar {
+        
+    }
+
+    .searchbar-md .searchbar-input {
+        padding: 6px 25px;
+    }
+
+    ion-searchbar .searchbar-input-container {
+        width: 100%;
+        height: 60%;
+        margin: 0 auto;
+        
+        
+    }
+
+    .searchbar-md .searchbar-search-icon {
+        left: 275px;
+        top: 10px;
+    }
+
+    .description {
+        font-size: 0.7em;
+    }
+
+    .index-price {
+        font-size: .9em;
+    }
+
+    .card-content-md
+    {
+        padding: 0;
+        transition: ease 1s;
+    }
+
+    ion-segment {
+        background-color: color($colors, bg-dark);
+        
+    }
+
+    .fa {
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .fa-percent {
+        font-size: 12px;
+    }
+
+    .segment-activated {
+        border-top: 2px solid color($colors, red) !important;
+        border-bottom: none !important;
+        border-right-color: #565658 !important;
+    }
+
+    .seg-btn1 {
+        border-right: 1px solid #565658;
+    }
+    .seg-btn2 {
+        border-right: 1px solid #565658;
+    }
+
+    
+    
+}
+
+

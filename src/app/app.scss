@@ -1,0 +1,134 @@
+.content-md {
+    background: color($colors, bg-dark);
+}
+
+
+super-tab-toolbar[ng-reflect-selected-tab='0'] .toolbar-background-md {
+    background-color: white !important;
+}
+
+super-tab-toolbar .toolbar-background-md {
+    background-color: color($colors, bg-dark) !important;
+}
+// Tabs
+// not selected color
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button:not(.selected) ion-icon,
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button:not(.selected) span:not(.badge) {
+    color: color($colors, white);
+    opacity: 1;
+}
+
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button ion-icon,
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button .title {
+    color: color($colors, red);
+}
+
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button ion-icon {
+    font-size: 14px;
+}
+
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button .title {
+    display: inline-block;
+}
+
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button {
+    height: 48px;
+}
+
+super-tabs-toolbar > ion-toolbar.toolbar .tab-buttons-container .tab-buttons super-tab-button.title-and-icon {
+    height: 48px;
+    padding-top: 15px;
+}
+
+
+ion-icon::before {
+    top: 1px;
+    position: relative;
+}
+
+super-tabs-container {
+    height: 100% !important;
+}
+
+// CARDS
+.card-md {
+    width: 100%;
+    margin: 1px 0;
+    border-radius: 0;
+    background: #403e43;
+}
+
+.card-md p{
+    color: #fff;
+}
+
+.index-price {
+    color: #2dba46;
+}
+
+.card-header-md {
+    padding: 5px 10px;
+}
+
+
+
+// Font Awesome
+.fa-icons-general {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+  }
+  
+  // qr
+  .ion-ios-fa-index::before,
+    .ion-ios-fa-index-outline::before,
+    .ion-md-fa-index::before {
+        @extend .fa-icons-general;
+        content: "\f03a";
+    }
+  // map
+    .ion-ios-fa-payment::before,
+    .ion-ios-fa-payment-outline::before,
+    .ion-md-fa-payment::before {
+        @extend .fa-icons-general;
+        content: "\f155";
+    }
+    // club
+    .ion-ios-fa-club::before,
+    .ion-ios-fa-club-outline::before,
+    .ion-md-fa-club::before {
+        @extend .fa-icons-general;
+        content: "\f247";
+    }
+    // globe
+    .ion-ios-fa-globe::before,
+    .ion-ios-fa-globe-outline::before,
+    .ion-md-fa-globe::before {
+        @extend .fa-icons-general;
+        content: "\f0ac";
+    }
+    // exchange
+    .ion-ios-fa-exchange::before,
+    .ion-ios-fa-exchange-outline::before,
+    .ion-md-fa-exchange::before {
+        @extend .fa-icons-general;
+        content: "\f0ec";
+    }
+    // tip
+    .ion-ios-fa-tip::before,
+    .ion-ios-fa-tip-outline::before,
+    .ion-md-fa-tip::before {
+        @extend .fa-icons-general;
+        content: "\f123";
+    }
+    // log-out
+    .ion-ios-fa-logout::before,
+    .ion-ios-fa-logout-outline::before,
+    .ion-md-fa-logout::before {
+        @extend .fa-icons-general;
+        content: "\f08b";
+    }

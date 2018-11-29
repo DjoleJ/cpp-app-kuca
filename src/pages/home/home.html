@@ -1,0 +1,15 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content>
+
+  <super-tabs tabsPlacement="top" (tabSelect)="onTabSelect($event)" class="tabs"  toolbarBackground="bg-dark" toolbarColor="light" indicatorColor="red">
+    <super-tab *ngFor="let page of pages" [root]="page.pageName" [title]="page.title" [icon]="page.icon" [id]="page.id" [style.color]="true ? 'green' : 'blue'"></super-tab>
+  </super-tabs>
+
+</ion-content>

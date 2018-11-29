@@ -1,0 +1,330 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>index</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content>
+
+  <ion-searchbar
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar> 
+
+  
+
+  <!-- ETH USD -->
+  <ion-card>
+    <ion-card-header (click)="onShowGraph(ethUsdData)">
+      <ion-grid>
+        <ion-row justify-content-between align-items-center>
+          <ion-col col-auto>
+              <i class="fa fa-line-chart" aria-hidden="true" [style.color]="!ethUsdData?.hide ? 'red' : ''" padding-right></i>
+            
+          </ion-col>
+          <ion-col>
+            <p>iETH/USD</p>
+            <p class="description">Price Index Ethereum vs. Dollar</p>
+          </ion-col>
+          <ion-col col-auto>
+            <span class="index-price">{{ ethUsdData?.Price }}</span>
+          </ion-col>
+          <ion-col col-auto>
+            <ion-icon ios="ios-close" md="md-close" padding-left></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content [style.height]="ethUsdData?.hide ? '0px' : 'auto'">
+        <canvas id="canvas">{{ chart }}</canvas>
+    </ion-card-content>
+  </ion-card>
+  <!-- ETH EUR -->
+  <ion-card>
+    <ion-card-header (click)="onShowGraph(ethEurData)">
+      <ion-grid>
+        <ion-row justify-content-between align-items-center>
+          <ion-col col-auto>
+              <i class="fa fa-line-chart" aria-hidden="true" [style.color]="!ethEurData?.hide ? 'red' : ''" padding-right></i>
+            
+          </ion-col>
+          <ion-col>
+            <p>iETH/EUR</p>
+            <p class="description">Price Index Ethereum vs. Euro</p>
+          </ion-col>
+          <ion-col col-auto>
+            <span class="index-price">{{ ethEurData?.Price }}</span>
+          </ion-col>
+          <ion-col col-auto>
+            <ion-icon ios="ios-close" md="md-close" padding-left></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content [style.height]="ethEurData?.hide ? '0px' : 'auto'">
+      <canvas id="canvas">{{ chart }}</canvas>
+  </ion-card-content>
+  </ion-card>
+
+  <!-- BTC USD -->
+  <ion-card>
+    <ion-card-header (click)="onShowGraph(btcUsdData)">
+      <ion-grid>
+        <ion-row justify-content-between align-items-center>
+          <ion-col col-auto>
+              <i class="fa fa-line-chart" aria-hidden="true" [style.color]="!btcUsdData?.hide ? 'red' : ''" padding-right></i>
+            
+          </ion-col>
+          <ion-col>
+            <p>iBTC/USD</p>
+            <p class="description">Price Index Bitcoin vs. Dollar</p>
+          </ion-col>
+          <ion-col col-auto>
+            <span class="index-price">{{ btcUsdData?.Price }}</span>
+          </ion-col>
+          <ion-col col-auto>
+            <ion-icon ios="ios-close" md="md-close" padding-left></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content [style.height]="btcUsdData?.hide ? '0px' : 'auto'">
+      <canvas id="canvas">{{ chart }}</canvas>
+  </ion-card-content>
+  </ion-card>
+  <!-- BTC EUR -->
+  <ion-card>
+    <ion-card-header (click)="onShowGraph(btcEurData)">
+      <ion-grid>
+        <ion-row justify-content-between align-items-center>
+          <ion-col col-auto>
+              <i class="fa fa-line-chart" aria-hidden="true" [style.color]="!btcEurData?.hide ? 'red' : ''" padding-right></i>
+            
+          </ion-col>
+          <ion-col>
+            <p>iBTC/EUR</p>
+            <p class="description">Price Index Bitcoin vs. Euro</p>
+          </ion-col>
+          <ion-col col-auto>
+            <span class="index-price">{{ btcEurData?.Price }}</span>
+          </ion-col>
+          <ion-col col-auto>
+            <ion-icon ios="ios-close" md="md-close" padding-left></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content [style.height]="btcEurData?.hide ? '0px' : 'auto'">
+      <canvas id="canvas">{{ chart }}</canvas>
+  </ion-card-content>
+  </ion-card>
+
+  <!-- XRP USD -->
+  <ion-card>
+    <ion-card-header (click)="onShowGraph(xrpUsdData)">
+      <ion-grid>
+        <ion-row justify-content-between align-items-center>
+          <ion-col col-auto>
+              <i class="fa fa-line-chart" aria-hidden="true" [style.color]="!xrpUsdData?.hide ? 'red' : ''" padding-right></i>
+            
+          </ion-col>
+          <ion-col>
+            <p>iXRP/USD</p>
+            <p class="description">Price Index Ripple vs. Dollar</p>
+          </ion-col>
+          <ion-col col-auto>
+            <span class="index-price">{{ xrpUsdData?.Price }}</span>
+          </ion-col>
+          <ion-col col-auto>
+            <ion-icon ios="ios-close" md="md-close" padding-left></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content [style.height]="xrpUsdData?.hide ? '0px' : 'auto'">
+      <canvas id="canvas">{{ chart }}</canvas>
+  </ion-card-content>
+  </ion-card>
+  <!-- XRP EUR -->
+  <ion-card>
+    <ion-card-header (click)="onShowGraph(xrpEurData)">
+      <ion-grid>
+        <ion-row justify-content-between align-items-center>
+          <ion-col col-auto>
+              <i class="fa fa-line-chart" aria-hidden="true" [style.color]="!xrpEurData?.hide ? 'red' : ''" padding-right></i>
+            
+          </ion-col>
+          <ion-col>
+            <p>iXRP/EUR</p>
+            <p class="description">Price Index Ripple vs. Euro</p>
+          </ion-col>
+          <ion-col col-auto>
+            <span class="index-price">{{ xrpEurData?.Price }}</span>
+          </ion-col>
+          <ion-col col-auto>
+            <ion-icon ios="ios-close" md="md-close" padding-left></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content [style.height]="xrpEurData?.hide ? '0px' : 'auto'">
+      <canvas id="canvas">{{ chart }}</canvas>
+  </ion-card-content>
+  </ion-card>
+
+  <!-- LTC USD -->
+  <ion-card>
+    <ion-card-header (click)="onShowGraph(ltcUsdData)">
+      <ion-grid>
+        <ion-row justify-content-between align-items-center>
+          <ion-col col-auto>
+              <i class="fa fa-line-chart" aria-hidden="true" [style.color]="!ltcUsdData?.hide ? 'red' : ''" padding-right></i>
+            
+          </ion-col>
+          <ion-col>
+            <p>iLTC/USD</p>
+            <p class="description">Price Index Litecoin vs. Dollar</p>
+          </ion-col>
+          <ion-col col-auto>
+            <span class="index-price">{{ ltcUsdData?.Price }}</span>
+          </ion-col>
+          <ion-col col-auto>
+            <ion-icon ios="ios-close" md="md-close" padding-left></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content [style.height]="ltcUsdData?.hide ? '0px' : 'auto'">
+      <canvas id="canvas">{{ chart }}</canvas>
+  </ion-card-content>
+  </ion-card>
+  <!-- LTC EUR -->
+  <ion-card>
+    <ion-card-header (click)="onShowGraph(ltcEurData)">
+      <ion-grid>
+        <ion-row justify-content-between align-items-center>
+          <ion-col col-auto>
+              <i class="fa fa-line-chart" aria-hidden="true" [style.color]="!ltcEurData?.hide ? 'red' : ''" padding-right></i>
+            
+          </ion-col>
+          <ion-col>
+            <p>iLTC/EUR</p>
+            <p class="description">Price Index Litecoin vs. Euro</p>
+          </ion-col>
+          <ion-col col-auto>
+            <span class="index-price">{{ ltcEurData?.Price }}</span>
+          </ion-col>
+          <ion-col col-auto>
+            <ion-icon ios="ios-close" md="md-close" padding-left></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content [style.height]="ltcEurData?.hide ? '0px' : 'auto'">
+      <canvas id="canvas">{{ chart }}</canvas>
+  </ion-card-content>
+  </ion-card>
+
+  <!-- XMR USD -->
+  <ion-card>
+    <ion-card-header (click)="onShowGraph(xmrUsdData)">
+      <ion-grid>
+        <ion-row justify-content-between align-items-center>
+          <ion-col col-auto>
+              <i class="fa fa-line-chart" aria-hidden="true" [style.color]="!xmrUsdData?.hide ? 'red' : ''" padding-right></i>
+            
+          </ion-col>
+          <ion-col>
+            <p>iXMR/USD</p>
+            <p class="description">Price Index Monero vs. Dollar</p>
+          </ion-col>
+          <ion-col col-auto>
+            <span class="index-price">{{ xmrUsdData?.Price }}</span>
+          </ion-col>
+          <ion-col col-auto>
+            <ion-icon ios="ios-close" md="md-close" padding-left></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content [style.height]="xmrUsdData?.hide ? '0px' : 'auto'">
+      <canvas id="canvas">{{ chart }}</canvas>
+  </ion-card-content>
+  </ion-card>
+  <!-- LTC EUR -->
+  <ion-card>
+    <ion-card-header (click)="onShowGraph(xmrEurData)">
+      <ion-grid>
+        <ion-row justify-content-between align-items-center>
+          <ion-col col-auto>
+            <i class="fa fa-line-chart" aria-hidden="true" [style.color]="!xmrEurData?.hide ? 'red' : ''" padding-right></i>
+            <!--<ion-icon ios="ios-contract" md="md-contract" [style.color]="!xmrEurData?.hide ? 'red' : ''" padding-right></ion-icon>-->
+          </ion-col>
+          <ion-col>
+            <p>iXMR/EUR</p>
+            <p class="description">Price Index Monero vs. Euro</p>
+          </ion-col>
+          <ion-col col-auto>
+            <span class="index-price">{{ xmrEurData?.Price }}</span>
+          </ion-col>
+          <ion-col col-auto>
+            <ion-icon ios="ios-close" md="md-close" padding-left></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content [style.height]="xmrEurData?.hide ? '0px' : 'auto'">
+      <canvas id="canvas">{{ chart }}</canvas>
+  </ion-card-content>
+  </ion-card>
+
+
+  <!-- <ion-card *ngFor="let post of posts">
+      <ion-card-header (click)="onShowGraph(post)">
+        <ion-grid>
+          <ion-row justify-content-between align-items-center>
+            <ion-col col-auto>
+                <ion-icon ios="ios-contract" md="md-contract"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <p>{{ post.date }}</p>
+              <p>{{ post.time }}</p>
+            </ion-col>
+            <ion-col col-auto>
+                <span class="index-price">{{ post.price }}</span>
+              </ion-col>
+            <ion-col col-auto>
+              <ion-icon ios="ios-close" md="md-close"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+      <ion-card-content *ngIf="!post.hide">
+        sdjgsdjg
+      </ion-card-content>
+  </ion-card> -->
+  
+
+</ion-content>
+
+<ion-footer >
+  <!--<ion-toolbar>-->
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button class="seg-btn1" value="sda">
+        <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+      </ion-segment-button>
+      <ion-segment-button class="seg-btn2" value="asdas" >
+        <i class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+      </ion-segment-button>
+      <ion-segment-button class="seg-btn3" value="asds">
+        <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+        <i class="fa fa-percent" aria-hidden="true"></i>
+      </ion-segment-button>
+    </ion-segment>
+  <!--</ion-toolbar> -->
+</ion-footer>
