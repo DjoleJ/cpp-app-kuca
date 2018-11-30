@@ -12,12 +12,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ContactsPage } from '../pages/contacts/contacts';
+import { WalletSettingsPage } from '../pages/wallet-settings/wallet-settings';
+
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ContactsPage,
+    WalletSettingsPage
   ],
   imports: [
     BrowserModule,
@@ -29,14 +34,17 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ContactsPage,
+    WalletSettingsPage
     
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataProvider
+    DataProvider,
+    
   ]
 })
 export class AppModule {}

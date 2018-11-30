@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AddressBookPage } from '../address-book/address-book';
+import { ContactsPage } from '../contacts/contacts';
+import { WalletSettingsPage } from '../wallet-settings/wallet-settings';
+
 
 import { Chart } from 'chart.js';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 import { DataProvider } from '../../providers/data/data';
 import { Post } from '../../models/Post';
 
-/**
- * Generated class for the PaymentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
+
 
 @IonicPage()
 @Component({
@@ -43,18 +40,22 @@ export class PaymentPage {
   hide: boolean;
   // p1: string;
 
+  
+
   chart = [];
 
   data = [
     {
-      "name": "Germany",
-      "value": 8940000
+      country: 'USA',
+      number: 808
+
     },
     {
-      "name": "USA",
-      "value": 5000000
+      country: 'Germany',
+      number: 808
+
     }
-  ]
+  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private DataService: DataProvider) {
   }
@@ -111,13 +112,15 @@ export class PaymentPage {
       this.xmrEurData.hide = true;
     });
 
+  
+
     this.chart = new Chart('canvas', {
       type: 'line',
       data: {
           labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
           datasets: [{
               label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
+              data: [5, 6, 7, 12, 30, 50],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
@@ -159,9 +162,13 @@ console.log(this.chart);
         post.hide = !post.hide;
   }
 
-  pushAddressBook() {
-    this.navCtrl.push(AddressBookPage);
+  onGoToContacts() {
+    this.navCtrl.push(ContactsPage);
    
+  }
+
+  onGoToWalletSettings() {
+    this.navCtrl.push(WalletSettingsPage);
   }
 
 }

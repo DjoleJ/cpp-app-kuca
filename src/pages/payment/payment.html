@@ -8,7 +8,7 @@
 </ion-header> -->
 
 <ion-content>
-<!--<ion-card>
+<ion-card>
   <ion-card-header (click)="onShowGraph(ethUsdData)">
     <ion-grid>
       <ion-row justify-content-between align-items-center>
@@ -275,65 +275,21 @@
 <ion-grid class="btn-section-grid">
   <ion-row class="btn-section-row">
     <ion-col class="btn-section-col">
-      <button ion-button round type="button" class="btn btn-address">Address</button>
+      <button ion-button round type="button" class="btn btn-address" (click)="onGoToContacts()">Address</button>
     </ion-col>
     <ion-col class="btn-section-col">
-      <button ion-button round type="button" class="btn btn-wallet">Wallet Settings</button>
+      <button ion-button round type="button" class="btn btn-wallet" (click)="onGoToWalletSettings()">Wallet Settings</button>
     </ion-col>
   </ion-row>
 </ion-grid> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1 class="wallet-settings-h">Wallet Settings</h1>
-<div class="wallet-settings-body">
-  <p class="wallet-settings-body-p">You do not have wallet <br>please set it up</p>
-</div>
-<ion-grid class="wallet-settings-grid">
-  <ion-row class="wallet-settings-row">
-    <ion-col class="wallet-settings-col">
-      <button ion-button round type="button" class="btn btn-create-view">Create View</button>
-    </ion-col>
-    <ion-col class="wallet-settings-col">
-        <button ion-button round type="button" class="btn btn-import-old">Import Old</button>
-    </ion-col>
-
-  </ion-row>
-</ion-grid> -->
-<button ion-button round (click)="pushAddressBook()" class="btn" type="button">Address Book</button>
 
 
 </ion-content>
 
 <ion-footer >
   <!--<ion-toolbar>-->
-    <ion-segment [(ngModel)]="pet">
-      <ion-segment-button class="seg-btn1" value="sda">
+    <ion-segment [(ngModel)]="peta">
+      <ion-segment-button class="seg-btn1"  value="sda">
         <i class="fa fa-university" aria-hidden="true"></i>
         
       </ion-segment-button>
